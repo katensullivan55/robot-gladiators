@@ -1,21 +1,21 @@
 // this creates a function named "fight"
-var playerName = window.prompt("What is your robot's name?");
-var playerHealth = 100;
-var playerAttack = 10;
-var playerMoney = 10;
+let playerName = window.prompt("What is your robot's name?");
+let playerHealth = 100;
+let playerAttack = 10;
+let playerMoney = 10;
 
 console.log(playerName, playerAttack, playerHealth);
 
-var enemyName = "Roberto";
-var enemyHealth = 50;
-var enemyAttack = 12;
+let enemyName = "Roberto";
+let enemyHealth = 50;
+let enemyAttack = 12;
 
-var fight = function() {
+let fight = function() {
     // alert players the round is starting
     window.alert("Welcome to Robot Gladiators");
 
     //ask  if player chooses to fight or run
-    var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
+    let promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
 
     //if player chooses to fight, fight
     if (promptFight === "fight" || promptFight === "FIGHT") {
@@ -48,7 +48,7 @@ var fight = function() {
     // if player choses to skip
     } else if (promptFight === "skip" || promptFight === "SKIP") {
     // confirm player wants to skip
-    var confirmSkip = window.confirm("Are you sure you'd like to quit?");
+    let confirmSkip = window.confirm("Are you sure you'd like to quit?");
   
     // if yes (true), leave fight
     if (confirmSkip) {
