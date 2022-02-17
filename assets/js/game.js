@@ -1,3 +1,9 @@
+// Game States
+// "WIN" - Player robot has defeated all enemy-robots
+//    * Fight all enemy-robots
+//    * Defeat each enemy-robot
+// "LOSE" - Player robot's health is zero or less
+
 // this creates a function named "fight"
 let playerName = window.prompt("What is your robot's name?");
 let playerHealth = 100;
