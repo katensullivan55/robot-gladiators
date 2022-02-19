@@ -35,7 +35,7 @@ let fight = function(enemyName) {
         console.log(
           playerName + " attacked " + enemyNames[i] + ". " + enemyNames[i] + " now has " + enemyHealth + " health remaining."
         );
-      }
+      };
 
       // check enemy's health
       if (enemyHealth <= 0) {
