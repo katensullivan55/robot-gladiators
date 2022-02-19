@@ -1,22 +1,22 @@
 /* GAME FUNCTIONS */
 
 // function to generate a random numeric value
-let randomNumber = function(min, max) {
-  let value = Math.floor(Math.random() * (max - min + 1) + min);
+var randomNumber = function(min, max) {
+  var value = Math.floor(Math.random() * (max - min + 1) + min);
 
   return value;
 };
 
 // fight function (now with parameter for enemy's object holding name, health, and attack values)
-let fight = function(enemy) {
+var fight = function(enemy) {
   while (playerInfo.health > 0 && enemy.health > 0) {
     // ask player if they'd like to fight or run
-    let promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
+    var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
 
     // if player picks "skip" confirm and then stop the loop
     if (promptFight === "skip" || promptFight === "SKIP") {
       // confirm player wants to skip
-      let confirmSkip = window.confirm("Are you sure you'd like to quit?");
+      var confirmSkip = window.confirm("Are you sure you'd like to quit?");
 
       // if yes (true), leave fight
       if (confirmSkip) {
@@ -29,7 +29,7 @@ let fight = function(enemy) {
     }
 
     // generate random damage value based on player's attack power
-    let damage = randomNumber(playerInfo.attack - 3, playerInfo.attack);
+    var damage = randomNumber(playerInfo.attack - 3, playerInfo.attack);
 
     enemy.health = Math.max(0, enemy.health - damage);
     console.log(
@@ -50,7 +50,7 @@ let fight = function(enemy) {
     }
 
     // remove players's health by subtracting the amount set in the enemy.attack variable
-    let damage = randomNumber(enemy.attack - 3, enemy.attack);
+    var damage = randomNumber(enemy.attack - 3, enemy.attack);
 
     playerInfo.health = Math.max(0, playerInfo.health - damage);
     
@@ -70,19 +70,19 @@ let fight = function(enemy) {
 };
 
 // function to start a new game
-let startGame = function() {
+var startGame = function() {
   // reset player stats
   playerInfo.reset();
 
   // fight each enemy robot by looping over them and fighting them one at a time
-  for (let i = 0; i < enemyInfo.length; i++) {
+  for (var i = 0; i < enemyInfo.length; i++) {
     // if player is still alive, keep fight next enemy
     if (playerInfo.health > 0) {
       // let player know what round they are in, remember that arrays start at 0 so it needs to have 1 added to it
       window.alert('Welcome to Robot Gladiators! Round ' + (i + 1));
 
       // pick new enemy to fight based on the index of the enemyInfo array
-      let pickedEnemyObj = enemyInfo[i];
+      var pickedEnemyObj = enemyInfo[i];
 
       // set health for picked enemy
       pickedEnemyObj.health = randomNumber(40, 60);
@@ -93,7 +93,7 @@ let startGame = function() {
       // if player is still alive and we're not at the last enemy in the array
       if (playerInfo.health > 0 && i < enemyInfo.length - 1) {
         // ask if player wants to use the store before next round
-        let storeConfirm = window.confirm("The fight is over, visit the store before the next round?");
+        var storeConfirm = window.confirm("The fight is over, visit the store before the next round?");
       
         // if yes, take them to the store() function
         if (storeConfirm) {
@@ -113,7 +113,7 @@ let startGame = function() {
 };
 
 // function to end the entire game
-let endGame = function() {
+var endGame = function() {
   window.alert("The game has now ended. Let's see how you did!");
 
   // if player is still alive, player wins!
@@ -124,7 +124,7 @@ let endGame = function() {
   }
 
   // ask player if they'd like to play again
-  let playAgainConfirm = window.confirm('Would you like to play again?');
+  var playAgainConfirm = window.confirm('Would you like to play again?');
 
   if (playAgainConfirm) {
     startGame();
@@ -134,9 +134,9 @@ let endGame = function() {
 };
 
 // go to shop between battles function
-let shop = function() {
+var shop = function() {
   // ask player what they'd like to do
-  let shopOptionPrompt = window.prompt(
+  var shopOptionPrompt = window.prompt(
     'Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one "REFILL", "UPGRADE", or "LEAVE" to make a choice.'
   );
 
@@ -170,7 +170,7 @@ let shop = function() {
 /* GAME INFORMATION / VARIABLES */
 
 // player information
-let playerInfo = {
+var playerInfo = {
   name: window.prompt("What is your robot's name?"),
   health: 100,
   attack: 10,
@@ -203,7 +203,7 @@ let playerInfo = {
 };
 
 // enemy information
-let enemyInfo = [
+var enemyInfo = [
   {
     name: 'Roborto',
     attack: randomNumber(10, 14)
